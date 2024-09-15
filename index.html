@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimanBumbu</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body style="background-color: black;">
+    <div class="load" id="loadingDiv">
+        <div class="loading">
+        </div>
+        <span>loading....</span>
+
+    </div>
+    <div class="card-container">
+    <section class="card">
+        <div class="product show">
+            <h2>MIE ACEH SIMAN BUMBU</h2>
+            <br>
+            <div class="slideshow-container">
+                <div class="mySlides">
+                    <img src="./assets/img/slide.jpg" >
+                </div>
+            
+                <div class="mySlides">
+                    <img src="./assets/img/slide2.jpg">
+                </div>
+            
+                <div class="mySlides">
+                    <img src="./assets/img/slide2.png">
+                </div>
+                <p>"Selamat datang di Bumbu dan Mie Aceh Terdekat di Jakarta! Kami adalah solusi terbaik untuk kebutuhan bumbu dan mie Aceh berkualitas tinggi. Dengan produk segar dan autentik, harga bersaing, dan layanan profesional, kami siap memenuhi kebutuhan Anda. Hubungi kami sekarang untuk pengalaman berbelanja yang memuaskan!"</p>
+            </div>
+        </div>
+    </section>
+    <section class="card" id="about">
+        <div class="product">
+            <h2 class="show">ABOUT US</h2>
+            <img src="./assets/img/icon.png" class="iconimg" alt="Icon Description" style="width: 20px; height: 20px;">
+            <p class="show">Mie Aceh merupakan salah satu makanan yang berasal dari Aceh. Mie ini memiliki cita rasa yang kaya rempah, dan rasa pedas yang menggugah selera. Rasa kuahnya terkenal dengan rasa gurih, pedas, asin, dan penuh dengan aroma khas Aceh yang begitu kaya akan rempah. Tekstur mie nya yang lembut dan tebal membuat mie ini terasa mengenyangkan.</p>
+            <div class="productcoll show">
+                <div class="img-mie">
+                    <img src="./assets/img/mieaceh.png" class="imgabout"alt="Icon Description" >
+                </div>
+                <div class="h2-test">
+                    <p>MIE ACEH<p>
+                    <p>Mie Aceh, makanan khas Aceh, dengan cita rasa kaya rempah dan pedas yang menggugah selera. Kuahnya terkenal gurih, pedas, asin, dan penuh aroma khas Aceh. Tekstur mie lembut dan tebal, sangat mengenyangkan.</p>
+                    <p>HARGA 1KG : RP. 10.000<br>BEST SELLER</p>
+                </div>
+            </div>
+
+            <div class="productcoll show">
+                <div class="h2-test2">
+                    <p>BUMBU ACEH<p>
+                    <p>Bumbu Aceh: Cita rasa pedas, gurih, dan aroma rempah yang khas. Sajikan sentuhan khusus Aceh dalam hidanganmu. Rasakan kelezatan bumbu yang menggoda selera dalam setiap suapan!</p>
+                    <p>HARGA 1KG : RP. 10.000 <br>BEST SELLER</p>
+                </div>
+                <div class="img-mie">
+                    <img src="./assets/img/bumbu.png" class="imgabout"alt="Icon Description" >
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="card" id="rating">
+        <div class="product"> 
+            <h2>Customer Rating</h2>
+            <div class="customercard show">
+                <div class="imagecustomer">
+                <img src="./assets/img/tes3.png" style="width: 50px; height: 50px;">
+                </div>
+                <div class="rating show">
+                    <p>Pelayanan sangat ramah</p>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                </div>
+            </div>
+            <div class="customercard show">
+                    <div class="imagecustomer">
+                    <img src="./assets/img/tes.png" style="width: 50px; height: 50px;">
+                    </div>
+                    <div class="rating">
+                        <p>Pelayanan sangat cepat</p>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                        <span class="star"></span>
+                </div>
+            </div>
+            <div class="customercard show">
+                <div class="imagecustomer">
+                <img src="./assets/img/tes2.png" style="width: 50px; height: 50px;">
+                </div>
+                <div class="rating show">
+                    <p>Rasanya Gurih dan pedas</p>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+                    <span class="star"></span>
+            </div>
+        </div>
+
+    </section>
+    <section class="card" id="contact">
+        <div class="product">
+            <h2>Pesan Sekarang - Form Kontak</h2>
+            <br>
+            <form onsubmit="kirimPesanWhatsApp(); return false;">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Nama" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="email" name="email" placeholder="Nomor Telepon" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Pesan" required></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Kirim Pesan">
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    
+    <div class="navigation">
+        <ul>
+            <li class="list active">
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                    </span>
+                    <span class="text">Home</span>
+                    <span class="circle"></span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#about">
+                    <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                    </span>
+                    <span class="text">About</span>
+                    <span class="circle"></span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#rating">
+                    <span class="icon">
+                        <ion-icon name="star-outline"></ion-icon>
+                    </span>
+                    <span class="text">Photos</span>
+                    <span class="circle"></span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#contact">
+                    <span class="icon">
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                    </span>
+                    <span class="text">Message</span>
+                    <span class="circle"></span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#contact">
+                    <span class="icon">
+                        <ion-icon name="settings-outline"></ion-icon>
+                    </span>
+                    <span class="text">Settings</span>
+                    <span class="circle"></span>
+                </a>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script>
+        function kirimPesanWhatsApp() {
+            var nama = document.getElementById('name').value;
+            var nomorTelepon = document.getElementById('email').value;
+            var pesan = document.getElementById('message').value;
+            var waLink = 'https://api.whatsapp.com/send?phone=' + nama + '. ' + pesan;
+
+            window.open(waLink);
+        }
+    </script>
+     <script>
+        function konfirmasiWarna() {
+            // Menampilkan pop-up konfirmasi
+            var konfirmasi = confirm("Apakah Anda ingin mengatur warna font menjadi merah?");
+            
+            // Jika pengguna menekan tombol OK pada pop-up konfirmasi
+            if (konfirmasi) {
+                // Mengubah warna font menjadi merah
+                document.body.style.color = "red";
+            }
+        }
+    </script>
+     <script>
+        // JavaScript
+        document.addEventListener("DOMContentLoaded", function() {
+            // Menunda penyembunyian elemen loading selama 3 detik
+            setTimeout(function() {
+                var loadingDiv = document.getElementById("loadingDiv");
+                loadingDiv.style.display = "none";
+            }, 3000); // Waktu jeda dalam milidetik (3 detik)
+        });
+    </script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="./assets/js/slider.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/scroll.js"></script>
+</body>
+</html>

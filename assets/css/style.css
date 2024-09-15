@@ -1,0 +1,752 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background: #0000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+.load {
+    background: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    z-index: 9999;
+}
+
+.loading {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: loading 2s linear infinite;
+}
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 1px 5px 2px #e65c00;
+    }
+    50% {
+        transform: rotate(180deg);
+        box-shadow: 1px 5px 2px #18b201;
+    }
+    100% {
+        transform: rotate(360deg);
+        box-shadow: 1px 5px 2px #0456c8;
+    }
+}
+.loading::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255,255,255,.3);
+
+}
+
+span {
+    color: #737373;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 200px;
+    animation: text 3s ease-in-out infinite;
+}
+@keyframes text {
+    50% {
+        color: black;
+    }
+}
+/* Your other styles for other elements */
+
+.navigation {
+    position: fixed;
+    bottom: 0;
+    width: 650px;
+    height: 70px;
+    background: linear-gradient(45deg, #ffa600, #ff0000);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+.navigation ul {
+    display: flex;
+    width: 350px;
+}
+.navigation ul li {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    list-style: none;
+    z-index: 1;
+}
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+}
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
+    color: #fff;
+    transition: .5s;
+}
+.navigation ul li.active a .icon {
+    transform: translateY(-32px);
+}
+.navigation ul li a .text {
+    position: absolute;
+    color: #fff;
+    font-weight: 400;
+    font-size: .75em;
+    letter-spacing: .05em;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: .5s;
+}
+.navigation ul li.active a .text {
+    opacity: 1;
+    transform: translateY(10px);
+}
+.navigation ul li a .circle {
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    border: 1.8px solid #fff;
+    transform: translateY(-37px) scale(0);
+}
+.navigation ul li.active a .circle {
+    transition: .5s;
+    transition-delay: .5s;
+    transform: translateY(-37px) scale(1);
+}
+.indicator {
+    position: absolute;
+    top: -50%;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, #ffa600, #ff0000);
+    border: 4px solid #350000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+.indicator::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+}
+
+.indicator::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -22px;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+}
+.navigation ul li:nth-child(1).active~.indicator {
+    transform: translateX(calc(70px * 0));
+}
+.navigation ul li:nth-child(2).active~.indicator {
+    transform: translateX(calc(70px * 1));
+}
+.navigation ul li:nth-child(3).active~.indicator {
+    transform: translateX(calc(70px * 2));
+}
+.navigation ul li:nth-child(4).active~.indicator {
+    transform: translateX(calc(70px * 3));
+}
+.navigation ul li:nth-child(5).active~.indicator {
+    transform: translateX(calc(70px * 4));
+}
+.card {
+    background: rgba(255, 255, 255, 0.13);
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    margin-left: 700px;
+    margin-right: 700px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    align-self: flex-start;
+}
+
+.card h2 {
+    align-self: flex-start; /* Letakkan judul di bagian atas */
+    margin: auto;
+    background: linear-gradient(45deg, #ffa600, #ff0000); /* Atur gradient sesuai keinginan Anda */
+    -webkit-background-clip: text; /* Menyembunyikan latar belakang di luar teks */
+    color: transparent; /* Membuat teks menjadi transparan agar gradient terlihat */
+    display: inline-block; /* Memastikan inline-block untuk memastikan gradient berlaku pada teks */
+    -webkit-text-fill-color: transparent; /* Membuat teks menjadi transparan pada browser berbasis WebKit */
+}
+.product .iconimg {
+    margin: auto; 
+    margin-top: -10px; 
+    
+}
+.card p {
+    color: #d4d4d4;
+    margin-top: 0.75rem; /* Set margin-top sesuai kebutuhan, dalam hal ini setara dengan mt-3 */
+    max-width: 70rem; /* Set max-width sesuai dengan max-w-xl */
+    font-size: .90rem; /* Set font-size sesuai dengan text-lg */
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 0 1rem;
+    margin: auto;
+    max-width: 100%;
+    text-align: center;
+}
+.productcoll {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc; 
+    padding-bottom: 20px;
+}
+.customercard {
+    margin-left: 475px;
+    margin-right: 475px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+.img-mie {
+    flex-shrink: 0; 
+}
+
+.h2-test2 {
+    text-align: right;
+    margin-right: 20px; 
+}
+.h2-test2 p {    
+    text-align: left;
+}
+.h2-test2 p:nth-child(1) {
+    text-align: right;
+    font-size: 1.90em;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ffa600, #ff0000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.h2-test2 p:nth-child(3) {
+    text-align: right;
+}
+.h2-test2 p:nth-child(4) {
+    text-align: right;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ac7000, #ff4800);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.h2-test p {    
+    text-align: left;
+}
+.h2-test p:nth-child(1) {
+    text-align: left;
+    font-size: 1.90em;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ffa600, #ff0000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.h2-test p:nth-child(4) {
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ac7000, #ff4800);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.img-mie img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Ganti warna border sesuai kebutuhan */
+    object-fit: cover;
+}
+
+.h2-test {
+    flex-grow: 1;
+    margin-left: 20px; 
+}
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+    padding-top: 20px;
+}
+svg {
+    position: absolute;
+    top: 51.70vh;
+    left: 0;
+    right: 420px;
+    margin: auto;
+    height: 0.80em;
+    width: fit-content;
+    fill: rgba(255, 115, 0, 0.5);
+    transform-origin: top left; /* Set the transformation origin */
+  }
+  .rating {
+    display: inline-block;
+    align-items: center;
+    margin-left: 95px;
+    flex-direction: column;
+    max-height: 75px;
+    overflow: hidden;
+  }
+  
+  .star {
+    width: 13px;
+    height: 13px;
+    background-color: #ff8800; /* Warna kuning, Anda dapat mengganti sesuai keinginan */
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    display: inline-block;
+  }
+  .rating p {
+    padding-bottom: 10px;
+    font-style: italic;
+    color: #ffffffbe;
+    margin-top: 5px;
+    overflow: hidden;
+    word-wrap: break-word;
+  }
+  .imagecustomer {
+    float: left; /* membuat gambar menjadi rata kiri */
+    padding-right: 8px; /* jarak antara gambar dan teks */
+}
+  .imagecustomer img {
+        float: left;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%; /* Ganti warna border sesuai kebutuhan */
+        object-fit: cover;
+  }
+  .rating-4 .star:nth-child(n+5),
+  .rating-3 .star:nth-child(n+4),
+  .rating-2 .star:nth-child(n+3),
+  .rating-1 .star:nth-child(n+2) {
+    background-color: #ccc;
+  }
+.form-group {
+    margin-left: 470px;
+    margin-right: 470px;
+    margin-bottom: 20px;
+}
+.form-group label {
+    display: none;
+}
+.form-group input[type="text"], 
+.form-group input[type="email"], 
+.form-group textarea {
+    width: 350px;
+    padding: 10px;
+    color: #ccc;
+    border: 1px solid #cccccc36;
+    border-radius: 5px;
+    background-color: rgba(255, 165, 0, 0.1);
+}
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+.form-group input[type="submit"] {
+    width: auto;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.form-group input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+.mySlides {
+    align-items: center;
+    margin:auto;
+    display: none;
+    width: 400px;
+    height: 350px;
+}
+.slideshow-container {
+    align-items: center;
+    padding-right: -10px;
+    margin-right: 86px;
+    margin-left: 86px;
+}
+.slideshow-container img {
+    width: 100%; /* Mengatur lebar gambar menjadi 100% dari lebar slideshow-container */
+    object-fit: cover; /* Memastikan gambar tetap terlihat proporsional dan tidak terdistorsi */
+    border-radius: 5%;
+}
+form {
+    margin: auto;
+}
+.show {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 1.5s ease;
+}
+.show.active {
+    transform: translateY(0px);
+    opacity: 1;
+}
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: black;
+    }
+    .navigation {
+        width: 270px;
+        height: 40px;
+        background: linear-gradient(45deg, #ffa600, #ff0000);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 9px;
+        margin-bottom: 15px;
+    }
+
+    .navigation ul {
+        display: flex;
+        width: 250px;
+    }
+    .navigation ul li a {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        font-weight: 100;
+    }
+    .navigation ul li a .icon {
+        font-size: 1em;
+    }
+    .navigation ul li.active a .icon {
+        transform: translateY(-45px);
+    }
+    .navigation ul li a .text {
+        position: absolute;
+        color: #fff;
+        font-weight: 100;
+        font-size: .65em;
+        letter-spacing: .02em;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: .5s;
+    }
+    .navigation ul li.active a .text {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+    .navigation ul li a .circle {
+        position: absolute;
+        display: block;
+        top: 12%;
+        left: 17.9%;
+        width: 35px;
+        height: 35px;
+        background: transparent;
+        border-radius: 50%;
+        border: 1.8px solid #fff;
+        transform: translateY(-32px) scale(0);
+    }
+    .navigation ul li.active a .circle {
+        transition: .5s;
+        left: 8px;
+        transition-delay: .5s;
+        transform: translateY(-36.9px) scale(1);
+    }
+    .indicator {
+        position: absolute;
+        top: -120%;
+        left: 5%;
+        width: 45px;
+        height: 45px;
+        background: linear-gradient(45deg, #ffa600, #ff0000);
+        border: 2px solid #350000;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .5s;
+    }
+    .indicator::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -22px;
+        width: 50px;
+        height: 50px;
+        background: transparent;
+    }
+    
+    .indicator::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -22px;
+        width: 50px;
+        height: 50px;
+        background: transparent;
+    }
+    .navigation ul li:nth-child(1).active~.indicator {
+        transform: translateX(calc(50px * 0));
+    }
+    .navigation ul li:nth-child(2).active~.indicator {
+        transform: translateX(calc(50px * 1));
+    }
+    .navigation ul li:nth-child(3).active~.indicator {
+        transform: translateX(calc(50px * 2));
+    }
+    .navigation ul li:nth-child(4).active~.indicator {
+        transform: translateX(calc(50px * 3));
+    }
+    .navigation ul li:nth-child(5).active~.indicator {
+        transform: translateX(calc(50px * 4));
+    }
+    .card {
+        background: rgba(100, 100, 100, 0.301);
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin: 8px 40px 7px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .card h2 {
+        font-size: .90rem;
+        align-self: flex-start;
+    }
+    
+    .card p {
+        color: #ffffffbe;
+        margin-top: .50rem;
+        max-width: 70rem;
+        font-size: .51rem;
+    }
+    .product {
+        margin-left: 2px;
+        margin-right: 2px;
+        align-items: center;
+    }
+    
+    .card-container {
+        display: flex;
+        flex-direction: column; /* Mengatur arah tata letak ke vertikal */
+        align-items: center; /* Optional: untuk memusatkan kartu di tengah */
+    }
+    .img-mie img {
+        width: 80px;
+        height: 80px;
+    }
+    .h2-test p:nth-child(1) {
+        text-align: left;
+        font-size: 1.1em;
+        font-weight: bold;
+        background: linear-gradient(45deg, #ffa600, #ff0000);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    .h2-test p:nth-child(4) {
+        text-align: left;
+        font-size: .60em;
+        font-weight: bold;
+        background: linear-gradient(45deg, #ff8800, #ff4800);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    svg {
+        top: 44vh;
+        left: 0;
+        right: -120px;
+        margin: auto;
+        height: 0.37em;
+        width: fit-content;
+        fill: rgba(255, 124, 2, 0.589);
+        transform: scale(0.5);
+      }
+    .h2-test2 p:nth-child(1) {
+        font-size: 1.1em;
+        background: linear-gradient(45deg, #ffa600, #ff7300);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    .h2-test2 p:nth-child(4) {
+        font-size: .60em;
+        font-weight: bold;
+        background: linear-gradient(45deg, #ff8800, #ff4800);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+     .rating {
+        display: inline-block;
+        align-items: center;
+        margin-left: 30px;
+        margin-right: 75px;
+        flex-direction: column;
+        max-height: 200px;
+        overflow: hidden;
+      }
+      
+      .star {
+        width: 13px;
+        height: 13px;
+        background-color: #ff8800; /* Warna kuning, Anda dapat mengganti sesuai keinginan */
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        display: inline-block;
+      }
+      .rating p {
+        padding-bottom: 10px;
+        font-style: italic;
+        color: #ffffffbe;
+        margin-top: 5px;
+        overflow: hidden;
+        word-wrap: break-word;
+      }
+      .customercard {
+        margin-left: 0;
+        margin-right: 15px;
+        margin-top: 20px;
+        
+    }
+      .imagecustomer {
+        float: left; /* membuat gambar menjadi rata kiri */
+        padding-right: 8px; /* jarak antara gambar dan teks */
+    }
+      .imagecustomer img {
+            float: left;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; /* Ganti warna border sesuai kebutuhan */
+            object-fit: cover;
+      }
+      .rating-4 .star:nth-child(n+5),
+      .rating-3 .star:nth-child(n+4),
+      .rating-2 .star:nth-child(n+3),
+      .rating-1 .star:nth-child(n+2) {
+        background-color: #ccc;
+      }
+    .form-group {
+        padding-left: 30px;
+        padding-right: 130px;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .form-group label {
+        display: none;
+    }
+    .form-group input[type="text"], 
+    .form-group input[type="email"], 
+    .form-group textarea {
+        width: 160%;
+        padding: 10px;
+        color: #ccc;
+        border: 1px solid #cccccc36;
+        border-radius: 5px;
+        background-color: rgba(255, 165, 0, 0.1);
+    }
+    .form-group textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+    .form-group input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .form-group input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    .mySlides {
+        margin:auto;
+        display: none;
+        width: 200px;
+        height: 170px;
+    }
+    
+    .slideshow-container img {
+        border-radius: 5%;
+    }
+    .slideshow-container {
+        max-width: 800px;
+        position: relative;
+        margin: auto;
+    }
+    .slideshow-container img {
+        width: 100%;
+        height: auto; 
+        object-fit: cover; 
+    }
+      
+}
